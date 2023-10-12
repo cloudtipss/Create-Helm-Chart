@@ -1,0 +1,12 @@
+Thank you for installing {{ .Values.service.name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+
+Port forward the service to localhost port : 
+
+kubectl port-forward service/{{ .Values.service.name }} 20043:{{ .Values.service.svcPort}} -n {{ .Values.service.namespace }}
