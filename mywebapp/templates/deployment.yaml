@@ -21,3 +21,10 @@ spec:
         imagePullPolicy: {{.Values.image.imagePullPolicy}}
         ports:
         - containerPort: {{ .Values.service.targetPort}}
+        resources:
+          requests:
+            memory: {{ .Values.service.resources.memoryMiB }}Mi
+            cpu: {{ .Values.service.resources.cpuMilli }}m
+          limits:
+            memory: {{ .Values.service.resources.memoryMiB }}Mi
+            cpu: {{ .Values.service.resources.cpuMilli }}m

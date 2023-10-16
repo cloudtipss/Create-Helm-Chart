@@ -14,6 +14,9 @@ service:
   namespace: default
   svcPort: 80
   targetPort: 80
+  resources:
+      memoryMiB: 100
+      cpuMilli: 200
 
 imagePullSecrets: []
 nameOverride: ""
